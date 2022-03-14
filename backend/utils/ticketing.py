@@ -1,18 +1,21 @@
 import os.path as osp
 import qrcode
 from qrcode.image.pil import PilImage
-from typing import Tuple
+import cv2
+from typing import Tuple, Dict, Union
 
 TICKETS_FOLDER_PATH = osp.join(osp.dirname(__file__), 'tickets')
+print(cv2.__version__)
 
 
 def generate_QRcode(data) -> PilImage:
-    # Creating an instance of QRCode class
-    qr = qrcode.QRCode(version = 1,
-                    box_size = 10,
-                    border = 5)
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=10,
+        border=4,
+    )
     
-    # Adding data to the instance 'qr'
     qr.add_data(data)
     
     qr.make(fit = True)
@@ -37,19 +40,51 @@ def generate_QRcode_ticket(
     ticket_info = f"{NFT_contract_address}_{NFT_token_id}_{wallet_address}_{nonce}" # TODO: is there a better way for encoding?
     ticket_QRcode = generate_QRcode(ticket_info)
 
-    ticket_QRcode_outpath = osp.join(TICKETS_FOLDER_PATH, f"{ticket_info}.jpg")
+    ticket_QRcode_outpath = osp.join(TICKETS_FOLDER_PATH, f"{ticket_info}.png")
     save_QRcode(ticket_QRcode, ticket_QRcode_outpath)
 
-    return ticket_QRcode, ticket_info
+    return ticket_QRcode, ticket_info, ticket_QRcode_outpath
+
+
+def read_QRcode(qr_img_path: str) -> Tuple[str, np.ndarray]:
+    img = cv2.imread(qr_img_path)
+    qrCodeDetector = cv2.QRCodeDetector()
+    decodedText, points, _ = qrCodeDetector.detectAndDecode(img)
+
+    # cv2.imshow("Image", img)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
+    
+    return decodedText, points
+
+
+def read_QRcode_ticket(qr_img_path: str) -> Union[Dict, None]:
+    decodedText, points = read_QRcode(qr_img_path)
+    
+    if points is not None:
+        NFT_contract_address, NFT_token_id, wallet_address, nonce = decodedText.split('_')
+        NFT_token_id, nonce = int(NFT_token_id), int(nonce)
+
+        ticket_info = {
+                'NFT_contract_address': NFT_contract_address, 
+                'NFT_token_id': NFT_token_id, 
+                'wallet_address': wallet_address, 
+                'nonce': nonce
+            }
+
+        return ticket_info
+    else:
+        return None
 
 
 if __name__ == '__main__':
-    ticket_QRcode, ticket_info = generate_QRcode_ticket(
-                                '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D',
-                                8520,
-                                '0x35fFc9D554465e0dE7a71d7285ad8b4EC447bde2',
-                                12
-                                )
-    print(f'Ticket Info: {ticket_info}')
-    
+    # TODO: generating and reading QRcode here are not consistent...find out WHY and fix it.
+    ticket_QRcode, ticket_info, ticket_QRcode_outpath = generate_QRcode_ticket(
+                                                                '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D',
+                                                                8520,
+                                                                '0x35fFc9D554465e0dE7a71d7285ad8b4EC447bde2',
+                                                                12
+                                                                )
+    ticket_info = read_QRcode_ticket(ticket_QRcode_outpath)
+    print(f'ticket info = {ticket_info}')
 
