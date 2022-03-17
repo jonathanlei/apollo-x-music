@@ -8,14 +8,13 @@ TICKETS_FOLDER_PATH = osp.join(osp.dirname(__file__), 'tickets')
 print(cv2.__version__)
 
 
-def generate_QRcode(data) -> PilImage:
+def _generate_QRcode(data: str) -> PilImage:
     qr = qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
         box_size=10,
         border=4,
     )
-    
     qr.add_data(data)
     
     qr.make(fit = True)
@@ -25,7 +24,7 @@ def generate_QRcode(data) -> PilImage:
     return qr_img
 
 
-def save_QRcode(qr_img: PilImage, outpath: str) -> None:
+def _save_QRcode(qr_img: PilImage, outpath: str) -> None:
     qr_img.save(outpath)
 
     return
@@ -38,15 +37,15 @@ def generate_QRcode_ticket(
                         nonce: int
                         ) -> Tuple[PilImage, str]:
     ticket_info = f"{NFT_contract_address}_{NFT_token_id}_{wallet_address}_{nonce}" # TODO: is there a better way for encoding?
-    ticket_QRcode = generate_QRcode(ticket_info)
+    ticket_QRcode = _generate_QRcode(ticket_info)
 
     ticket_QRcode_outpath = osp.join(TICKETS_FOLDER_PATH, f"{ticket_info}.png")
-    save_QRcode(ticket_QRcode, ticket_QRcode_outpath)
+    _save_QRcode(ticket_QRcode, ticket_QRcode_outpath)
 
     return ticket_QRcode, ticket_info, ticket_QRcode_outpath
 
 
-def read_QRcode(qr_img_path: str) -> Tuple[str, np.ndarray]:
+def _read_QRcode(qr_img_path: str) -> Tuple[str, np.ndarray]:
     img = cv2.imread(qr_img_path)
     qrCodeDetector = cv2.QRCodeDetector()
     decodedText, points, _ = qrCodeDetector.detectAndDecode(img)
@@ -59,7 +58,7 @@ def read_QRcode(qr_img_path: str) -> Tuple[str, np.ndarray]:
 
 
 def read_QRcode_ticket(qr_img_path: str) -> Union[Dict, None]:
-    decodedText, points = read_QRcode(qr_img_path)
+    decodedText, points = _read_QRcode(qr_img_path)
     
     if points is not None:
         NFT_contract_address, NFT_token_id, wallet_address, nonce = decodedText.split('_')
