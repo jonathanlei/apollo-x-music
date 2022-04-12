@@ -1,6 +1,7 @@
 import './App.css';
 import {React, useEffect, useState} from "react";
-
+import Nav from './components/Nav';
+import Hero from './components/Hero';
 const OPENSEA_LINK = '';
 const TOTAL_MINT_COUNT = 50;
 
@@ -59,6 +60,8 @@ const App = () => {
 
   return (
     <div className="App">
+      <Nav></Nav>
+      <Hero></Hero>
       <div className="container">
         <div className="header-container">
           <p className="header gradient-text">Apollo Music</p>
