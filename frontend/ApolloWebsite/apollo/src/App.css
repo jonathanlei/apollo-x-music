@@ -7,7 +7,7 @@
 
 .container {
   height: 100%;
-  background-color: #0d1116;
+  background-color: #fafafa;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,7 +25,7 @@
 
 .sub-text {
   font-size: 25px;
-  color: white;
+  color: rgba(200, 102, 207, 0.72);
 }
 
 .gradient-text {
