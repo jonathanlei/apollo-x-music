@@ -1,6 +1,7 @@
 import os.path as osp
 import qrcode
 from qrcode.image.pil import PilImage
+import numpy as np
 import cv2
 from typing import Tuple, Dict, Union
 
@@ -39,7 +40,7 @@ def generate_QRcode_ticket(
     ticket_info = f"{NFT_contract_address}_{NFT_token_id}_{wallet_address}_{nonce}" # TODO: is there a better way for encoding?
     ticket_QRcode = _generate_QRcode(ticket_info)
 
-    ticket_QRcode_outpath = osp.join(TICKETS_FOLDER_PATH, f"{ticket_info}.png")
+    ticket_QRcode_outpath = osp.join(TICKETS_FOLDER_PATH, f"{ticket_info}.jpg")
     _save_QRcode(ticket_QRcode, ticket_QRcode_outpath)
 
     return ticket_QRcode, ticket_info, ticket_QRcode_outpath
@@ -77,7 +78,6 @@ def read_QRcode_ticket(qr_img_path: str) -> Union[Dict, None]:
 
 
 if __name__ == '__main__':
-    # TODO: generating and reading QRcode here are not consistent...find out WHY and fix it.
     ticket_QRcode, ticket_info, ticket_QRcode_outpath = generate_QRcode_ticket(
                                                                 '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D',
                                                                 8520,
