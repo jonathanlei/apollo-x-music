@@ -2,31 +2,33 @@ import React from 'react';
 import "./WorkFlow.css";
 function WorkFlow() {
   return (
-    <div className="how-it-works-section" >
-      <h1 className="title h2" >
-        How it works
-      </h1>
-      <div className="how-it-works-container" >
-        <HowItWorks
-          browseConcerts1="Browse concerts"
-          browseConcerts2="Explore from a variety of cities"
-          
-        />
-        <HowItWorks2
-          browseConcerts1="Purchase tickets"
-          browseConcerts2="Purchase with a blockchain wallet"
-          
-        />
-        <HowItWorks3
-          browseConcerts1="Get NFT ticket"
-          browseConcerts2="Concert ticket is an NFT with value"
-          
-        />
-        <HowItWorks4
-          browseConcerts1="Scan QR code"
-          browseConcerts2="Scan at concert event"
-          
-        />
+    <div className="how-it-works">
+      <div className="how-it-works-section" >
+        <h1 className="title h2" >
+          How it works
+        </h1>
+        <div className="how-it-works-container" >
+          <HowItWorks
+            browseConcerts1="Browse concerts"
+            browseConcerts2="Explore from a variety of cities"
+            
+          />
+          <HowItWorks2
+            browseConcerts1="Purchase tickets"
+            browseConcerts2="Purchase with a blockchain wallet"
+            
+          />
+          <HowItWorks3
+            browseConcerts1="Get NFT ticket"
+            browseConcerts2="Concert ticket is an NFT with value"
+            
+          />
+          <HowItWorks4
+            browseConcerts1="Scan QR code"
+            browseConcerts2="Scan at concert event"
+            
+          />
+        </div>
       </div>
     </div>
   );

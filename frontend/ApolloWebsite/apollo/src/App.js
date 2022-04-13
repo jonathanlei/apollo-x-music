@@ -63,9 +63,7 @@ const App = () => {
     <div className="App">
       <Nav></Nav>
       <Hero></Hero>
-      <div className="howitworks">
       <WorkFlow></WorkFlow>
-      </div>
       <div className="container">
         <div className="header-container">
           <p className="header gradient-text">Apollo Music</p>
