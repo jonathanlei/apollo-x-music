@@ -70,6 +70,7 @@
     left: 0px;
     top: 150px;
     border-radius: 1rem;
+    cursor:pointer;
     
     /* white */
     
@@ -85,8 +86,7 @@
 
 .btn-text {
   position: static;
-  width: 135px;
-  height: 24px;
+
   left: 16px;
   top: 12px;
 

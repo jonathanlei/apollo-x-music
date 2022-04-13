@@ -1,0 +1,13 @@
+
+.container {
+    display: flex;
+    height: 50%;
+    width: 100%;
+}
+
+.header-container h1 {
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 48px;
+}
