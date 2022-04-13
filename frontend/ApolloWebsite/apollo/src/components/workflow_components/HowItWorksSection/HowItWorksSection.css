@@ -1,0 +1,28 @@
+.how-it-works-section {
+  align-items: center;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  height: 417px;
+  padding: 88px 0;
+  width: 1440px;
+}
+
+.title {
+  color: var(--black);
+  font-weight: 700;
+  margin-left: 32.0px;
+  min-height: 48px;
+  min-width: 207px;
+  text-align: center;
+}
+
+.how-it-works-container {
+  align-items: flex-start;
+  display: flex;
+  height: 153px;
+  margin-top: 40px;
+  min-width: 1233px;
+  position: relative;
+}
+

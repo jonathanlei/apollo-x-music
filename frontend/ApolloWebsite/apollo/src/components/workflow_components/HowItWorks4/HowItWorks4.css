@@ -1,0 +1,38 @@
+.how-it-works-3 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 84px;
+  min-height: 153px;
+  width: 199px;
+}
+
+.iconqr-code {
+  height: 72px;
+  width: 72px;
+}
+
+.frame-11-3 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+  min-height: 63px;
+  width: 199px;
+}
+
+.browse-concerts-6 {
+  color: var(--black);
+  font-weight: 500;
+  min-height: 36px;
+  min-width: 169px;
+  text-align: center;
+}
+
+.browse-concerts-7 {
+  letter-spacing: 0;
+  min-height: 27px;
+  min-width: 199px;
+  text-align: center;
+}
+
