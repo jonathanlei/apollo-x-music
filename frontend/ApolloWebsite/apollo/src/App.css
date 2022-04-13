@@ -6,6 +6,9 @@
   overflow: scroll;
   text-align: center;
 }
+.howitworks{
+  background-color: white;
+}
 
 .container {
   height: 100%;

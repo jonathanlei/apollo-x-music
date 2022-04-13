@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700,500,600");
+
+.how-it-works {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 153px;
+  position: relative;
+  width: 269px;
+}
+
+.frame-11 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+  min-height: 63px;
+  width: 269px;
+}
+
+.browse-concerts {
+  color: var(--black);
+  font-weight: 500;
+  min-height: 36px;
+  min-width: 199px;
+  text-align: center;
+}
+
+.browse-concerts-1 {
+  letter-spacing: 0;
+  min-height: 27px;
+  min-width: 269px;
+  text-align: center;
+}
+
+.iconsearch {
+  align-items: flex-start;
+  display: flex;
+  height: 72px;
+  padding: 2.7px 1.6px;
+  width: 72px;
+}
+
+.union {
+  height: 65px;
+  width: 68px;
+}
+
+.how-it-works-1 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 44px;
+  min-height: 153px;
+  position: relative;
+  width: 305px;
+}
+
+.frame-11-1 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+  min-height: 63px;
+  width: 305px;
+}
+
+.browse-concerts-2 {
+  color: var(--black);
+  font-weight: 500;
+  min-height: 36px;
+  min-width: 199px;
+  text-align: center;
+}
+
+.browse-concerts-3 {
+  letter-spacing: 0;
+  min-height: 27px;
+  min-width: 305px;
+  text-align: center;
+}
+
+.icon-wallet {
+  align-items: center;
+  display: flex;
+  height: 72px;
+  padding: 0 4px;
+  width: 72px;
+}
+
+.overlap-group {
+  align-items: flex-start;
+  background-size: 100% 100%;
+  background-image: url(../../public/images/Wallet.png);
+  display: flex;
+  height: 60px;
+  min-width: 64px;
+  padding: 12px 27px;
+}
+
+.ellipse-161 {
+  background-color: var(--purple);
+  border-radius: 5px;
+  height: 10px;
+  width: 10px;
+}
+
+.how-it-works-2 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 26px;
+  min-height: 153px;
+  position: relative;
+  width: 306px;
+}
+
+.frame-11-2 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+  min-height: 63px;
+  width: 306px;
+}
+
+.browse-concerts-4 {
+  color: var(--black);
+  font-weight: 500;
+  min-height: 36px;
+  min-width: 165px;
+  text-align: center;
+}
+
+.browse-concerts-5 {
+  letter-spacing: 0;
+  min-height: 27px;
+  min-width: 306px;
+  text-align: center;
+}
+
+.icon-arrow {
+  align-items: flex-start;
+  display: flex;
+  height: 72px;
+  padding: 4px 3.8px;
+  width: 72px;
+}
+
+.union-1 {
+  height: 62px;
+  width: 64px;
+}
+
+.how-it-works-3 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 84px;
+  min-height: 153px;
+  width: 199px;
+}
+
+.iconqr-code {
+  height: 72px;
+  width: 72px;
+}
+
+.frame-11-3 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+  min-height: 63px;
+  width: 199px;
+}
+
+.browse-concerts-6 {
+  color: var(--black);
+  font-weight: 500;
+  min-height: 36px;
+  min-width: 169px;
+  text-align: center;
+}
+
+.browse-concerts-7 {
+  letter-spacing: 0;
+  min-height: 27px;
+  min-width: 199px;
+  text-align: center;
+}
+
+.how-it-works-section {
+  align-items: center;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  height: 417px;
+  padding: 88px 0;
+  width: 1440px;
+}
+
+.title {
+  color: var(--black);
+  font-weight: 700;
+  margin-left: 32px;
+  min-height: 48px;
+  min-width: 207px;
+  text-align: center;
+}
+
+.how-it-works-container {
+  align-items: flex-start;
+  display: flex;
+  height: 153px;
+  margin-top: 40px;
+  min-width: 1233px;
+  position: relative;
+}

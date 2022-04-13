@@ -1,0 +1,33 @@
+.how-it-works {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 153px;
+  position: relative;
+  width: 269px;
+}
+
+.frame-11 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+  min-height: 63px;
+  width: 269px;
+}
+
+.browse-concerts {
+  color: var(--black);
+  font-weight: 500;
+  min-height: 36px;
+  min-width: 199px;
+  text-align: center;
+}
+
+.browse-concerts-1 {
+  letter-spacing: 0;
+  min-height: 27px;
+  min-width: 269px;
+  text-align: center;
+}
+
