@@ -1,0 +1,23 @@
+.cardContainer {
+    margin: 10px;
+    box-shadow: none;
+}
+
+.typography {
+    font-family: Poppins;
+    color: black;
+    text-align: left;
+    font-size: 18px;
+}
+
+.dataBody {
+    font-family: Poppins;
+    color: grey;
+    text-align: left;
+}
+
+.content {
+    background-color: #F1F0FA;
+    box-shadow: none;
+    /* text-align: center; */
+}

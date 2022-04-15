@@ -69,7 +69,7 @@ const App = () => {
       <Hero></Hero>
       <WorkFlow></WorkFlow>
       <EventSlider/>
-      <div className="container">
+      {/* <div className="container">
         <div className="header-container">
           <p className="header gradient-text">Apollo Music</p>
           <p className="sub-text">
@@ -83,7 +83,7 @@ const App = () => {
             </button>
           )}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
