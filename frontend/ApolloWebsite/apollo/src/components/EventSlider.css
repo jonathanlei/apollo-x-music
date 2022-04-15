@@ -1,0 +1,14 @@
+
+.EventSection {
+    background-color: #F1F0FA;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 60%;
+
+}
+.Carousel {
+    background-color: #F1F0FA;
+    display: flex;
+    height: 80%;
+}
