@@ -2,7 +2,6 @@
 from turtle import back
 from sqlalchemy.sql import func
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import UserMixin
 from sqlalchemy.orm import backref
 
 
@@ -28,7 +27,7 @@ class User(db.Model, UserMixin):
     nfts = db.relationship('Nft', backref="owners")
     events = db.relationship(
         'Event', secondary="events_users", backref="users")
-    nfts = db.relationship('Nft')
+
     def to_dict(self):
         return {
             "wallet_address": self.wallet_address,
@@ -66,14 +65,13 @@ class Artist(db.Model):
 
 class Event(db.Model):
     """ table for storing music events """
-    #TODO: refunding mechinism?? 
+    # TODO: refunding mechinism??
     __tablename__ = "events"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     artist = db.Column(db.Integer, db.ForeignKey("artists.id"), nullable=False)
-    min_fundraising_goal = db.Column(db.Integer, nullable=False, default=0)
-    description = db.Colun(db.Text, nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    ticket_amount = db.Column(db.Integer, nullable=False)
     date = db.Column(db.DateTime(timezone=True), nullable=False)
-    fundrasing_deadline = db.Column(db.DateTime(timezone=True), nullable=False)
     attendees = db.relationship(
         "User", secondary="events_users", backref="events")
     # TODO: check fundraising goals?

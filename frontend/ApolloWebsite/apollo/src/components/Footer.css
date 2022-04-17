@@ -1,0 +1,118 @@
+/* Footer */
+.footer {
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 88px 71px 120px;
+
+  position: static;
+  width: 1440px;
+  height: 312px;
+  left: 0px;
+  bottom: 0px;
+
+  /* light grey */
+
+  background: #f7f7f7;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  margin: 0px 0px;
+}
+
+.footer-content {
+  /* Footer content */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+
+  position: static;
+  width: 1298px;
+  height: 104px;
+  left: 71px;
+  top: 88px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 10px 0px;
+}
+
+.newletter-section {
+  /* Newsletter section */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  position: static;
+  width: 638px;
+  height: 100px;
+  left: 660px;
+  top: 0px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0px 475px;
+}
+
+.footer-links-container {
+  /* Footer links */
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  left: 0px;
+  top: 0px;
+
+  /* Inside auto layout */
+}
+
+.footer-links {
+  /* Contact */
+
+  position: static;
+  width: 66px;
+  height: 24px;
+  left: 0px;
+  top: 80px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+
+  /* black */
+
+  color: #232236;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  margin: 16px 0px;
+}
