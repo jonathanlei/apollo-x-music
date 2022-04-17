@@ -5,7 +5,6 @@ import EventSlider from "../EventSlider";
 function HomePage() {
   return (
     <>
-      <Nav></Nav>
       <Hero></Hero>
       <WorkFlow></WorkFlow>
       <EventSlider></EventSlider>

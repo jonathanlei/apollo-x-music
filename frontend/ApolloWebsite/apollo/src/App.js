@@ -1,6 +1,7 @@
 import './App.css';
 import {React, useEffect, useState} from "react";
-import HomePage from './components/Pages/HomePage';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './components/Routes';
 const OPENSEA_LINK = '';
 const TOTAL_MINT_COUNT = 50;
 
@@ -62,7 +63,10 @@ const App = () => {
 
   return (
     <div className="App">
-      <HomePage></HomePage>
+      <BrowserRouter>
+
+          <Routes />
+      </BrowserRouter>
       {/* <div className="container">
         <div className="header-container">
           <p className="header gradient-text">Apollo Music</p>
