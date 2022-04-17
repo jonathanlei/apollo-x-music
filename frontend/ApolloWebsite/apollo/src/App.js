@@ -1,9 +1,6 @@
 import './App.css';
 import {React, useEffect, useState} from "react";
-import Nav from './components/Nav';
-import Hero from './components/Hero';
-import WorkFlow from "./components/WorkFlow"
-import EventSlider from './components/EventSlider';
+import HomePage from './components/HomePage';
 const OPENSEA_LINK = '';
 const TOTAL_MINT_COUNT = 50;
 
@@ -65,10 +62,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Nav></Nav>
-      <Hero></Hero>
-      <WorkFlow></WorkFlow>
-      <EventSlider/>
+      <HomePage></HomePage>
       {/* <div className="container">
         <div className="header-container">
           <p className="header gradient-text">Apollo Music</p>
