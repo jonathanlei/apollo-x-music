@@ -4,8 +4,6 @@ function Footer() {
     return (
         <div className="footer">
             <div className="footer-content">
-                <div className="newletter-section">
-                </div>
                 <div className="footer-links-container">
                     <Link
                         href="https://www.google.com/"
@@ -19,6 +17,9 @@ function Footer() {
                         href="https://www.google.com/"
                         linktext="Contact"
                     />
+                </div>
+
+                <div className="newletter-section">
                 </div>
             </div>
         </div>
