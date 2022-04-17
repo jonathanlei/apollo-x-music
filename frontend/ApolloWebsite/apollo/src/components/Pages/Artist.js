@@ -1,4 +1,6 @@
 function Artist({id}){
-  return (<></>)
+  return (<>
+  <div>I'm an aritst</div>
+  </>)
 }
 export default Artist; 
