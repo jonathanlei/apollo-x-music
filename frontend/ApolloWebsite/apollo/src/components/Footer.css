@@ -46,21 +46,11 @@
 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
+  justify-content: center;
   padding: 0px;
-
-  position: static;
-  width: 638px;
+  width: 100%;
   height: 100px;
-  left: 660px;
-  top: 0px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  margin: 0px 475px;
 }
 
 .footer-links-container {
@@ -166,4 +156,27 @@
   /* inactive grey */
 
   color: #aeaeb1;
+}
+
+.signup {
+  background: #6F65E9;
+  margin-left: 16px;
+  width: 93px;
+  height: 48px;
+  font-family: "Poppins";
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.newsletter-container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.signup:hover {
+  background-color: #918ad3;
 }
