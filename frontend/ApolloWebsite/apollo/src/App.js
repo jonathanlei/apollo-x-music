@@ -64,7 +64,6 @@ const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
-
           <Routes />
       </BrowserRouter>
       {/* <div className="container">
