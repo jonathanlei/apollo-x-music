@@ -19,8 +19,7 @@ function Footer() {
                     />
                 </div>
 
-                <div className="newletter-section">
-                </div>
+                <NewsLetter />
             </div>
         </div>
     );
@@ -35,5 +34,19 @@ function Link(props) {
         <div className="footer-links">
             <a href={href}>{linktext}</a>
         </div>
+    )
+}
+
+function NewsLetter() {
+    return (
+        <div className="newsletter-section">
+            <h3 className="SITL-text">
+                Stay in the loop about concerts
+            </h3>
+            <div>
+                <input type="text" className="email-entry" placeholder="Enter email"></input>
+                <button>Sign Up</button>
+            </div>
+        </div >
     )
 }
