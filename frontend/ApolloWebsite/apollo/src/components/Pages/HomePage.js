@@ -9,7 +9,6 @@ function HomePage() {
       <Hero></Hero>
       <WorkFlow></WorkFlow>
       <EventSlider></EventSlider>
-      <Footer></Footer>
     </>
   );
 }

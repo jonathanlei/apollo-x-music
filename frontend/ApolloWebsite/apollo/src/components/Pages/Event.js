@@ -17,7 +17,7 @@ function Event() {
   let [eventInfo, setEventInfo] = useState(dummy_info);
   useEffect(function getEvent() {
     async function getEventAPI() {
-      let res = await apolloApi.getArtist();
+      let res = await apolloApi.getEvent();
       setEventInfo(res);
     }
     getEventAPI();

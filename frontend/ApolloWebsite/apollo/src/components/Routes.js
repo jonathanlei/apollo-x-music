@@ -36,7 +36,7 @@ function Routes() {
           <Event />
         </Route>
         <Route exact path="/artists">
-          <ArtistList />
+          <Artist />
         </Route>
         <Route exact path="/artists/:id">
           <Artist />
