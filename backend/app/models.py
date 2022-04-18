@@ -41,8 +41,7 @@ class Artist(db.Model):
     """ table for storing Artist details """
     __tablename__ = 'artists'
     id = db.Column(db.Interger, primary_key=True, autoincrement=True)
-    first_name = db.Column(db.String(35), nullable=False)
-    last_name = db.Column(db.String(35), nullable=True)
+    name = db.Column(db.String(300), nullable=False)
     bio = db.Column(db.Text, nullable=True)
     instagram = db.Column(db.Text, nullable=False)
     spotify = db.Column(db.Text, nullable=False)
@@ -53,8 +52,7 @@ class Artist(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
-            "first_name": self.first_name,
-            "last_name": self.last_name,
+            "name": self.name,
             "bio": self.bio,
             "instagram": self.instagram,
             "spotify": self.spotify,
@@ -68,12 +66,15 @@ class Event(db.Model):
     # TODO: refunding mechinism??
     __tablename__ = "events"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.String(300), nullable=False)
     artist = db.Column(db.Integer, db.ForeignKey("artists.id"), nullable=False)
     description = db.Column(db.Text, nullable=False)
     ticket_amount = db.Column(db.Integer, nullable=False)
     date = db.Column(db.DateTime(timezone=True), nullable=False)
+    location = db.Column(db.String(300), nullable=False)
     attendees = db.relationship(
         "User", secondary="events_users", backref="events")
+
     # TODO: check fundraising goals?
     # how to represent NFTs??
 
@@ -81,10 +82,12 @@ class Event(db.Model):
         return {
             "id": self.id,
             "artist": self.artist,
-            "min_fundraising_goal": self.min_fundraising_goal,
+            "name": self.name,
             "date": self.date,
             "description": self.description,
-            "fundrasing_deadline": self.fundrasing_deadline,
+            "ticket_amount": self.ticket_amount,
+            "location": self.location,
+            "attendees": self.attendees,
         }
 
 
