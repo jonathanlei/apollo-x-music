@@ -18,8 +18,7 @@ contract MusicNFTFactory is Ownable {
     ) external {
         // TODO make and pass a payment splitter (https://docs.openzeppelin.com/contracts/2.x/api/payment)
 
-        MusicNFT instance = new MusicNFT(
-        );
+        MusicNFT instance = new MusicNFT();
         instances.push(instance);
         emit InstanceCreated(msg.sender, address(instance), instances.length-1);
     }
