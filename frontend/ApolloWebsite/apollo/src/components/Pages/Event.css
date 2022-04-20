@@ -1,4 +1,4 @@
-.Event-page {
+.event-page {
   --black: rgba(0, 0, 0, 1);
   --grey: rgba(89, 87, 104, 1);
   --purple: rgba(111, 101, 233, 1);
@@ -15,6 +15,12 @@
   --font-size-xxxl: 48px;
 
   --font-family-poppins: "Poppins";
+}
+
+.event-page img {
+  object-fit: scale-down;
+  height: 50%;
+  width: 200px;
 }
 
 .h4 {

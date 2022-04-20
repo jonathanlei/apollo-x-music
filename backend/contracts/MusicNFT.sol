@@ -14,13 +14,15 @@ contract MusicNFT is ERC721URIStorage, ERC2981ContractWideRoyalties{
 
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
+    string eventname;
 
     function random(string memory input) internal pure returns(uint256) {
         return uint256(keccak256(abi.encodePacked(input)));
     }
 
 
-    constructor() ERC721 ("Appollo Music", "AMNFT") {
+    constructor(string memory eventName) ERC721 ("Appollo Music", "AMNFT") {
+        eventname = eventName;
         console.log("This is my NFT Contract, woah");
     }
 
@@ -54,6 +56,10 @@ contract MusicNFT is ERC721URIStorage, ERC2981ContractWideRoyalties{
 
         console.log("An NFT w/ ID %s has been minted to %s", newID, msg.sender);
 
+    }
+
+    function getEvent() public view returns(string memory) {
+        return eventname;
     }
 
 

@@ -24,7 +24,7 @@ function Event() {
   }, []);
 
   return (
-    <div className="Event-page">
+    <div className="event-page">
       <img src={eventInfo.backgroundImg} alt=""></img>
       <div className="event-section">
         <h1 className="event-title"> {eventInfo.title} </h1>

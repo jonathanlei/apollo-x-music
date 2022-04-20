@@ -5,20 +5,21 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "./MusicNFT.sol";
+import "hardhat/console.sol";
+
 
 contract MusicNFTFactory is Ownable {
     MusicNFT [] public instances;
-    // TODO store token ids so they can be checked for uniqueness
 
     event InstanceCreated(address indexed _from, address indexed _instance, uint256 indexed _instanceNumber);
 
     address factoryWalletAddress;
 
     function get(
+        string memory name
     ) external {
-        // TODO make and pass a payment splitter (https://docs.openzeppelin.com/contracts/2.x/api/payment)
 
-        MusicNFT instance = new MusicNFT();
+        MusicNFT instance = new MusicNFT(name);
         instances.push(instance);
         emit InstanceCreated(msg.sender, address(instance), instances.length-1);
     }
@@ -27,4 +28,11 @@ contract MusicNFTFactory is Ownable {
         factoryWalletAddress = addr;
     }
 
+    function getInstances() public view returns(address[] memory) {
+        address[] memory list = new address[](instances.length);
+        for(uint i = 0; i < instances.length; i++){
+            list[i] = address(instances[i]);
+        }
+        return list;
+    }
 }
