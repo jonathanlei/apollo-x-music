@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import apolloApi from "../../api";
 import "./Event.css";
+import NFT from "../NFT";
 const dummy_info = {
   backgroundImg:
     "https://images.unsplash.com/photo-1608178398319-48f814d0750c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1158&q=80",
@@ -63,22 +64,5 @@ function Event() {
   );
 }
 
-function NFT(props) {
-  const { eventName, artist, details, nftImg} = props;
 
-  return (
-    <div className="nft">
-      <div className="unsplashru-jm3d-bx-cqw">
-        <img src={nftImg} alt=""></img>
-      </div>
-      <div className="group-8">
-        <p className="nft-name-of-eventh3">{eventName}</p>
-        <p className="featured-artists-loc">
-          <span className="span0">{artist}</span>
-          <span className="poppins-normal-scarpa-flow-14px">{details}</span>
-        </p>
-      </div>
-    </div>
-  );
-}
 export default Event;
