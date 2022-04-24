@@ -2,7 +2,7 @@
 
 ## Installation
 
-```
+```bash
 $ python -m venv venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
@@ -12,7 +12,7 @@ $ pip install -r requirements.txt
 
 ### backend
 
-```
+```bash
 $ cd <ApolloXMusic_dir>/backend/
 # prepare twilio related environment variables
 # option 1: local testing
@@ -22,7 +22,7 @@ $ source twilio.env # (local)
 
 ### frontend
 
-```
+```bash
 $ cd <ApolloXMusic_dir>/frontend/ApolloWebsite/apollo/
 $ npm install
 $ npm start
