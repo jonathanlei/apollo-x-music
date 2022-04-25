@@ -1,3 +1,18 @@
 .arist-sign-up{
     background-color: white;
 }
+
+.form-fields {
+    width: 44%;
+    height: 4vh;
+}
+
+.arist-sign-up h1 {
+    font-size: 32px;
+    font-family: 'Poppins';
+}
+
+.arist-sign-up h5 {
+    font-size: 15px;
+    font-family: 'Poppins';
+}
