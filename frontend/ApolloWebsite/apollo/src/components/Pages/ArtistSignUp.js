@@ -1,6 +1,8 @@
 import { useState } from "react";
+import "./ArtistSignUp.css";
 function ArtistSignUp() {
   let [formData, setFormData] = useState({
+    files: "",
     aritstName: "",
     location: "",
     Instagram: "",
@@ -29,19 +31,14 @@ function ArtistSignUp() {
     <div className="arist-sign-up">
       <img src={formData.previewUrl} alt="" />
       <h5>Upload picture</h5>
-      <input
-        type="button"
-        id="get_file"
-        className="btn-main"
-        value="Browse"
-        name="get_file"
-      />
-      <input
-        name="files"
-        id="upload_file"
-        type="file"
-        onChange={handleChange}
-      />
+      <div className="browse">
+        <input
+          name="files"
+          id="upload_file"
+          type="file"
+          onChange={handleChange}
+        />
+      </div>
 
       <h1> Sign up as an Aritst</h1>
       <form>
