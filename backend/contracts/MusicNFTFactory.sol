@@ -9,7 +9,7 @@ import "hardhat/console.sol";
 
 
 contract MusicNFTFactory is Ownable {
-    MusicNFT [] public instances;
+    MusicNFT[] public instances;
 
     event InstanceCreated(address indexed _from, address indexed _instance, uint256 indexed _instanceNumber);
 
