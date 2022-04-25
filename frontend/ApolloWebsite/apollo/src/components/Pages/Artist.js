@@ -30,7 +30,7 @@ function Artist() {
   useEffect(function getArtist() {
     async function getArtistAPI() {
       let res = await apolloApi.getArtist();
-      setArtistInfo(res);
+      // setArtistInfo(res);
     }
     getArtistAPI();
   }, []);

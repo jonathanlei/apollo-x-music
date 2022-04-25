@@ -7,6 +7,7 @@ import Event from "./Pages/Event";
 import EventList from "./Pages/EventList";
 import TicketScanner from "./TicketScanner";
 import Footer from "./Footer";
+import ArtistSignUp from "./Pages/ArtistSignUp";
 
 /** Routes Component
  *
@@ -41,6 +42,9 @@ function Routes() {
         </Route>
         <Route exact path="/artists/:id">
           <Artist />
+        </Route>
+        <Route exact path="/artist-sign-up">
+          <ArtistSignUp/>
         </Route>
         <Route exact path="/ticketscanner">
           <TicketScanner />
