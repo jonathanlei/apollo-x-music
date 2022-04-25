@@ -16,6 +16,20 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-module.exports = {
-  solidity: "0.8.4",
-};
+ const ALCHEMY_API_KEY = "L3nLG6jAsgUXxU6rLKsFyuAxeVt8HFPI";
+
+ // Replace this private key with your Ropsten account private key
+ // To export your private key from Metamask, open Metamask and
+ // go to Account Details > Export Private Key
+ // Be aware of NEVER putting real Ether into testing accounts
+ const GOERLI_PRIVATE_KEY = "b9e068147a9a624dbe5893a5d8b0f29617eb9f8c2e51062ba0976112ae3a4611";
+ 
+ module.exports = {
+   solidity: "0.8.4",
+   networks: {
+     goerli: {
+       url: `https://eth-goerli.alchemyapi.io/v2/L3nLG6jAsgUXxU6rLKsFyuAxeVt8HFPI`,
+       accounts: [`${GOERLI_PRIVATE_KEY}`]
+     }
+   }
+ };

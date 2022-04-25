@@ -18,14 +18,7 @@ async function main() {
   const MusicNFTFactory = await hre.ethers.getContractFactory("MusicNFTFactory");
   const musicNFTFactory = await MusicNFTFactory.deploy();
   await musicNFTFactory.deployed();
-  await musicNFTFactory.get('testingEvent1');
-  const shit = await musicNFTFactory.getInstances();
-  console.log(shit);
   console.log("Factory contract deployed to ", musicNFTFactory.address);
-
-
-  const MusicNFT = await hre.ethers.getContractAt("MusicNFT", shit[0]);
-  await MusicNFT.mintTicket('0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266');
 }
 
 // We recommend this pattern to be able to use async/await everywhere
