@@ -36,7 +36,7 @@ class smartContractApi {
     const c = await contract.getInstances();
     console.log(c, "GETTING Instances!!");
   }
-  static async mintTicket(contract_address="0x711a39BD45E01e7158DdEd38F512FF2cCf7f5c4f", address="0x2d48f47219ffE77e0fc1F303e106f7143e2eaa90"){
+  static async mintTicket( address, contract_address="0x711a39BD45E01e7158DdEd38F512FF2cCf7f5c4f",){
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const contract = new ethers.Contract(

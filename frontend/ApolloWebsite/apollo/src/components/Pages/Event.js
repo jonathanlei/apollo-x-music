@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import apolloApi from "../../api";
 import "./Event.css";
 import NFT from "../NFT";
+import smartContractApi from "../smartContractApi";
+import UserContext from "../usercontext";
 const dummy_info = {
   backgroundImg:
     "https://images.unsplash.com/photo-1608178398319-48f814d0750c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1158&q=80",
@@ -17,6 +19,7 @@ const dummy_info = {
 };
 function Event() {
   let [eventInfo, setEventInfo] = useState(dummy_info);
+  let currentUser = useContext(UserContext);
   useEffect(function getEvent() {
     async function getEventAPI() {
       let res = await apolloApi.getEvent();
@@ -24,14 +27,21 @@ function Event() {
     }
     getEventAPI();
   }, []);
+  function handleClick() {
+    smartContractApi.mintTicket(currentUser);
+  }
 
   return (
     <div className="event-page">
-      <img className='backgroundImage'src={eventInfo.backgroundImg} alt=""></img>
+      <img
+        className="backgroundImage"
+        src={eventInfo.backgroundImg}
+        alt=""
+      ></img>
       <div className="event-section">
         <div className="event-details">
           <div className="event-title"> {eventInfo.title} </div>
-          <div className='moreDetails'>
+          <div className="moreDetails">
             <div className="artist-link" href={eventInfo.artistLink}>
               {eventInfo.artistName}
             </div>
@@ -43,34 +53,36 @@ function Event() {
         <div className="purchase-section">
           <div className="money-section">
             <div className="event-price-eth">{eventInfo.price} ETH</div>
-            <div className="event-price-dollar">(${eventInfo.priceDollar}) </div>
+            <div className="event-price-dollar">
+              (${eventInfo.priceDollar}){" "}
+            </div>
           </div>
-          <div className ="button-section">
-            <button className="purchase">Purchase Ticket</button>
+          <div className="button-section">
+            <button onClick={handleClick} className="purchase">
+              Purchase Ticket
+            </button>
           </div>
         </div>
-
       </div>
-        <NFT
-          nftImg={eventInfo.nftImg}
-          eventName="NFT - Space Jesus Tour"
-          artist={
-            <>
-              {eventInfo.artistName}
-              <br />
-            </>
-          }
-          details={
-            <>
-              {eventInfo.location}
-              <br />
-              {eventInfo.date}
-            </>
-          }
-        />
+      <NFT
+        nftImg={eventInfo.nftImg}
+        eventName="NFT - Space Jesus Tour"
+        artist={
+          <>
+            {eventInfo.artistName}
+            <br />
+          </>
+        }
+        details={
+          <>
+            {eventInfo.location}
+            <br />
+            {eventInfo.date}
+          </>
+        }
+      />
     </div>
   );
 }
-
 
 export default Event;
