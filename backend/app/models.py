@@ -72,6 +72,8 @@ class Event(db.Model):
     ticket_amount = db.Column(db.Integer, nullable=False)
     date = db.Column(db.DateTime(timezone=True), nullable=False)
     location = db.Column(db.String(300), nullable=False)
+    contract_address = db.Column(db.String(300), nullable=False)
+    background_url = db.Column(db.Text, nullable=True)
     attendees = db.relationship(
         "User", secondary="events_users", backref="events")
 

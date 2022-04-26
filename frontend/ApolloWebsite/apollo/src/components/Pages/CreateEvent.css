@@ -1,19 +1,44 @@
-.event-sign-up{
-    background-color: white;
+.event-sign-up {
+  padding-top: 5%;
+  background-color: white;
 }
 
-
 .form-fields {
-    width: 44%;
-    height: 4vh;
+  width: 44%;
+  height: 4vh;
 }
 
 h1 {
-    font-size: 32px;
-    font-family: 'Poppins';
+  font-size: 32px;
+  font-family: "Poppins";
 }
 
 h5 {
-    font-size: 15px;
-    font-family: 'Poppins';
+  font-size: 15px;
+  font-family: "Poppins";
+}
+
+.create-event-btn {
+  background: #6f65e9;
+  margin: 2%;
+  width: 8%;
+  height: 48px;
+  font-family: "Poppins";
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.preview-nft-image{
+    padding: 5%;
+    height: 20%;
+    width: 20%;
+}
+
+.images{
+    padding: 5%;
+    height: 20%;
+    width: 50%;
 }

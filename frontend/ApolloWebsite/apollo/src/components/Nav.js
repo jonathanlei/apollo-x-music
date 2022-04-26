@@ -1,10 +1,17 @@
 import "./Nav.css";
+import { Link } from "react-router-dom";
 function Nav() {
+
+  function handleClick(){
+    
+  }
   return (
     <div className="Navigation">
-      <img src="images/Logo.png" alt="" className="logo"></img>
+      <Link to="/">
+        <img src="images/Logo.png" alt="" className="logo"></img>
+      </Link>
       <div className="sign-up">
-        <h3 className="sign-up-text"> sign up as artist</h3>
+        <h3 className="sign-up-text"> connect wallet</h3>
       </div>
     </div>
   );

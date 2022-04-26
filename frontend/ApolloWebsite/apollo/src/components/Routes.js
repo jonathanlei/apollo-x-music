@@ -45,7 +45,7 @@ function Routes() {
           <Artist />
         </Route>
         <Route exact path="/artist-sign-up">
-          <ArtistSignUp />
+          <ArtistSignUp/>
         </Route>
         <Route exact path="/ticketscanner">
           <TicketScanner />

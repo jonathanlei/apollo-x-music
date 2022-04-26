@@ -3,7 +3,9 @@
   height: 318px;
   object-fit: cover;
 }
-
+.event-page{
+  background-color: white;
+}
 
 .event-section {
   display: flex;

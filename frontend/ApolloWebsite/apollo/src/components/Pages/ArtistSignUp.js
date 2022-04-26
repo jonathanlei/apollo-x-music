@@ -31,7 +31,15 @@ function ArtistSignUp() {
     <div className="arist-sign-up">
       <div className="form">
         <h1> Sign up as an Aritst</h1>
-        <img className="profile-img" src={formData.previewUrl} alt="" />
+        <img
+          className="profile-img"
+          src={
+            formData.previewUrl
+              ? formData.previewUrl
+              : "https://i.imgur.com/tdi3NGa.jpg"
+          }
+          alt=""
+        />
         <h5>Upload picture</h5>
         <div className="browse">
           <input
