@@ -8,6 +8,7 @@ import EventList from "./Pages/EventList";
 import TicketScanner from "./TicketScanner";
 import Footer from "./Footer";
 import ArtistSignUp from "./Pages/ArtistSignUp";
+import CreateEvent from "./Pages/CreateEvent";
 
 /** Routes Component
  *
@@ -44,10 +45,13 @@ function Routes() {
           <Artist />
         </Route>
         <Route exact path="/artist-sign-up">
-          <ArtistSignUp/>
+          <ArtistSignUp />
         </Route>
         <Route exact path="/ticketscanner">
           <TicketScanner />
+        </Route>
+        <Route exact path="/create-event">
+          <CreateEvent />
         </Route>
         <Redirect to="/" />
       </Switch>

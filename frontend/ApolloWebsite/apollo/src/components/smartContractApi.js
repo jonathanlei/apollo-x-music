@@ -10,7 +10,16 @@ import { Button } from "@chakra-ui/button"
 import Startup from "./views/Startup";
 
 
-function App() {
+class SmartContractApi{
+  static async connectWallet (){
+    if(window.ethereum) { // check if i have metamask installed or not 
+     let accounts = await window.ethereum.request({
+       method: 'eth_requestAccounts',
+     });
+     return accounts[0];
+    }
+ }
+}
   const [account, setAccount] = useState('')
   const [factory, setFactory] = useState(null)
   const companyMetadata = [{name: "Robin", stakes: 50, tokenURI: ""}, {name: "Another", stakes: 50, tokenURI: ""}]

@@ -1,18 +1,39 @@
-.arist-sign-up{
-    background-color: white;
+.arist-sign-up {
+  background-color: white;
 }
-
+.form{
+    padding-top: 2%;
+}
+.profile-img{
+    height: 10%;
+    width: 10% ;
+}
 .form-fields {
-    width: 44%;
-    height: 4vh;
+  width: 44%;
+  height: 4vh;
 }
-
-.arist-sign-up h1 {
-    font-size: 32px;
-    font-family: 'Poppins';
+h4 {
+  font-size: 28px;
+  font-family: "Poppins";
+}
+h1 {
+  font-size: 35px;
+  margin-top: 2%;
 }
 
 .arist-sign-up h5 {
-    font-size: 15px;
-    font-family: 'Poppins';
+  font-size: 20px;
+  font-family: "Poppins";
+}
+.sign-up-button {
+  background: #6f65e9;
+  margin: 2%;
+  width: 8%;
+  height: 48px;
+  font-family: "Poppins";
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  border: none;
+  cursor: pointer;
 }

@@ -34,18 +34,7 @@ function CreateEvent() {
   }
 
   return (
-    <div className="arist-sign-up">
-      <img src={formData.previewUrl} alt="" />
-      <h5>Upload picture</h5>
-      <div className="browse">
-        <input
-          name="files"
-          id="upload_file"
-          type="file"
-          onChange={handleChange}
-        />
-      </div>
-
+    <div className="event-sign-up">
       <h1> Create an Event</h1>
       <form>
         <h5>Event Name</h5>
@@ -103,40 +92,32 @@ function CreateEvent() {
           value={formData.price}
           onChange={handleChange}
         />
-        <h5>Instagram</h5>
+        <div>
+          <button> Create Event</button>
+        </div>
+
+        <img src={formData.previewNFTUrl} alt="" />
+      <h5>Upload NFT Ticket image</h5>
+      <div className="browse">
         <input
-          type="text"
-          name="Instagram"
-          id="Instagram"
-          className="form-fields"
-          placeholder="e.g. 'Crypto Funk"
-          value={formData.Instagram}
+          name="nft"
+          id="upload_file"
+          type="file"
           onChange={handleChange}
         />
+      </div>
+      <h5>Upload NFT background Image (Optional)</h5>
+      <div className="browse">
+        <input
+          name="backgroundImg"
+          id="upload_file"
+          type="file"
+          onChange={handleChange}
+        />
+        <img src={formData.previewBackgroundUrl} alt="" />
+      </div>
+
       </form>
-
-      <h4> Musical Accounts</h4>
-      <h5>Spotify</h5>
-      <input
-        type="text"
-        name="Spotify"
-        id="Spotify"
-        className="form-fields"
-        placeholder="e.g. 'Crypto Funk"
-        value={formData.Spotify}
-        onChange={handleChange}
-      />
-
-      <h5>SoundCloud</h5>
-      <input
-        type="text"
-        name="SoundCloud"
-        id="SoundCloud"
-        className="form-fields"
-        placeholder="e.g. 'Crypto Funk"
-        value={formData.SoundCloud}
-        onChange={handleChange}
-      />
     </div>
   );
 }
