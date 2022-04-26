@@ -30,20 +30,20 @@ function Event() {
       <img className='backgroundImage'src={eventInfo.backgroundImg} alt=""></img>
       <div className="event-section">
         <div className="event-details">
-          <h1 className="event-title"> {eventInfo.title} </h1>
+          <div className="event-title"> {eventInfo.title} </div>
           <div className='moreDetails'>
-            <a className="artist-link" href={eventInfo.artistLink}>
+            <div className="artist-link" href={eventInfo.artistLink}>
               {eventInfo.artistName}
-            </a>
-            <p className="event-location"> {eventInfo.location}</p>
-            <p className="event-date"> {eventInfo.date}</p>
+            </div>
+            <div className="event-location"> {eventInfo.location}</div>
+            <div className="event-date"> {eventInfo.date}</div>
           </div>
         </div>
 
         <div className="purchase-section">
           <div className="money-section">
-            <p className="event-price-eth">{eventInfo.price} ETH</p>
-            <p className="event-price-dollar">(${eventInfo.priceDollar}) </p>
+            <div className="event-price-eth">{eventInfo.price} ETH</div>
+            <div className="event-price-dollar">(${eventInfo.priceDollar}) </div>
           </div>
           <div className ="button-section">
             <button className="purchase">Purchase Ticket</button>
