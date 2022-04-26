@@ -23,11 +23,11 @@ import CreateEvent from "./Pages/CreateEvent";
  *
  * App -> Routes -> {Homepage, CompanyList, CompanyDetail, JobList, LoginForm, SignupForm, ProfileForm}
  * */
-function Routes() {
+function Routes({connectWallet}) {
   // const currentUser = useContext(UserContext);
   return (
     <>
-      <Nav />
+      <Nav connectWallet={connectWallet} />
       <Switch>
         <Route exact path="/">
           <HomePage />

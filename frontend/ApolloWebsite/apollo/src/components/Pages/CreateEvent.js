@@ -39,9 +39,9 @@ function CreateEvent() {
   }
   function handleSubmit(evt) {
     evt.preventDefault();
-    // smartContractApi.createEvent(formData.name);
-    // smartContractApi.getEvents();
-    let contract = smartContractApi.mintTicket();
+    smartContractApi.createEvent(formData.name);
+    smartContractApi.getEvents();
+    // smartContractApi.mintTicket();
   }
 
   return (

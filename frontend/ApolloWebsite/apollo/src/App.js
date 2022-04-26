@@ -1,71 +1,68 @@
-import './App.css';
-import {React, useEffect, useState} from "react";
-import { BrowserRouter } from 'react-router-dom';
-import Routes from './components/Routes';
-const OPENSEA_LINK = '';
-const TOTAL_MINT_COUNT = 50;
+import "./App.css";
+import { React, useEffect, useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+import Routes from "./components/Routes";
+import UserContext from "./components/usercontext";
 
 const App = () => {
   // Render Methods
-
   const [currentAccount, setcurrentAccount] = useState("");
 
-  const checkIfWalletConnected =  async () => {
+  const checkIfWalletConnected = async () => {
     const { ethereum } = window;
-    
+
     if (!ethereum) {
       console.log("Make Sure you have metamask");
     } else {
       console.log("We have an ethereum object", ethereum);
     }
-    const accounts = await ethereum.request({method: 'eth_accounts'});
-
+    const accounts = await ethereum.request({ method: "eth_accounts" });
 
     if (accounts.length !== 0) {
       const account = accounts[0];
       console.log("Found an Authorized Account:", account);
       setcurrentAccount(account);
     } else {
-      console.log("No account found")
+      console.log("No account found");
     }
-  }
+  };
 
   const connectWallet = async () => {
     try {
-      const {ethereum} = window;
+      const { ethereum } = window;
       if (!ethereum) {
         console.log("Alert: Get Metamask");
         return;
       }
 
-      const accounts = ethereum.request({method: "eth_requestAccounts"});
+      const accounts = ethereum.request({ method: "eth_requestAccounts" });
       console.log("Connected", accounts[0]);
       setcurrentAccount(accounts[0]);
     } catch (error) {
       console.log(error);
     }
-
-  }
-
+  };
 
   const renderNotConnectedContainer = () => (
-    <button onClick={() => connectWallet()}className="cta-button connect-wallet-button">
+    <button
+      onClick={() => connectWallet()}
+      className="cta-button connect-wallet-button"
+    >
       Connect to Wallet
     </button>
   );
 
   useEffect(() => {
     checkIfWalletConnected();
-  }, [])
-
-
-
+  }, []);
 
   return (
     <div className="App">
-      <BrowserRouter>
-          <Routes />
-      </BrowserRouter>
+      <UserContext.Provider value={currentAccount}>
+        <BrowserRouter>
+          <Routes connectWallet={connectWallet} />
+        </BrowserRouter>
+      </UserContext.Provider>
       {/* <div className="container">
         <div className="header-container">
           <p className="header gradient-text">Apollo Music</p>
